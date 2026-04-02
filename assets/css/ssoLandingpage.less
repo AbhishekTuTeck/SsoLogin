@@ -1,19 +1,42 @@
 /* ===== Font ===== */
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../fonts/google/Roboto/static/Roboto-Regular.ttf") format("truetype");
-}
-@import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
+@import url('../fonts/googleFontInter.css');
+// @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
 
 
 .ssoLandingpage {
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
   min-height: 100vh;
 }
-
+.loader {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #FFF;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border-bottom: 4px solid #0d6efd;
+  border-left: 4px solid transparent;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
 /* ===== Navbar ===== */
 
 

@@ -2,12 +2,30 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>SSO Login | ASISSE</title>
+    <title>MoSPI Login | Enterprise Surveys</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="assets/images/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/images/favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="assets/images/favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="assets/images/favicon//site.webmanifest" />
 
     <!-- Bootstrap 5 -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        href="assets/css/bootstrap.min.css"
       rel="stylesheet"
     />
 
@@ -20,6 +38,28 @@
     <link rel="stylesheet" href="assets/css/ssoLandingpage.css" />
   </head>
   <body class="ssoLandingpage">
+    <div
+      id="loaderWrapper"
+      class="position-fixed h-100 w-100 bg-white d-flex align-items-center justify-content-center d-none"
+      style="z-index: 99"
+    >
+      <div class="text-center position-relative">
+        <img
+          src="assets/images/dataDevNso.png"
+          alt="NSSO Logo"
+          class="mb-5"
+          height="100"
+          width="100"
+          style="position: absolute; left: 81px; top: 24px"
+        />
+        <div>
+          <span class="loader m-auto mt-3"></span>
+        </div>
+
+        <h4 class="mt-3 mb-2 d-block">Please wait a moment...</h4>
+        <p class="text-muted">We’re preparing your content.</p>
+      </div>
+    </div>
     <!-- ===== Landing Section ===== -->
     <div class="landing-wrapper">
       <div class="container">
@@ -28,7 +68,9 @@
             <div class="landing-card">
               <nav class="">
                 <div class="d-flex align-items-center">
-                  <div class="navbar-brand d-flex align-items-center gap-2">
+                  <div
+                    class="navbar-brand d-flex align-items-center gap-2 text-center"
+                  >
                     <img
                       src="assets/images/nssoLogoEng.svg"
                       alt="NSSO Logo"
@@ -36,7 +78,7 @@
                     />
                   </div>
 
-                  <div class="dropdown notification-dropdown ms-auto">
+                  <!-- <div class="dropdown notification-dropdown ms-auto">
                     <a
                       href="#"
                       class="top-icon position-relative fs-5"
@@ -46,7 +88,7 @@
                       <i class="fi fi-rr-language-exchange"></i>
                     </a>
 
-                    <!-- Dropdown -->
+             
                     <ul class="dropdown-menu">
                       <li>
                         <a class="dropdown-item" href="#">English</a>
@@ -54,7 +96,7 @@
                       <li><hr class="dropdown-divider" /></li>
                       <li><a class="dropdown-item" href="#">हिन्दी</a></li>
                     </ul>
-                  </div>
+                  </div> -->
                 </div>
               </nav>
 
@@ -67,7 +109,10 @@
 
               <!-- Survey Grid -->
               <div class="survey-grid">
-                <a href="#" class="survey-tile">
+                <a
+                  href="https://stageensd.esigma.mospi.gov.in/ASI/admin"
+                  class="survey-tile"
+                >
                   <span class="icon bg-primary">
                     <svg
                       width="22"
@@ -121,7 +166,10 @@
                   <i class="fi fi-rr-angle-small-right"></i>
                 </a>
 
-                <a href="#" class="survey-tile">
+                <a
+                  href="https://stageensd.esigma.mospi.gov.in/ASISSE"
+                  class="survey-tile"
+                >
                   <span class="icon bg-warning">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -175,7 +223,10 @@
                   <i class="fi fi-rr-angle-small-right"></i>
                 </a>
 
-                <a href="#" class="survey-tile">
+                <a
+                  href="https://stageensd.esigma.mospi.gov.in/ASUSE/admin"
+                  class="survey-tile"
+                >
                   <span class="icon bg-success">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -235,7 +286,10 @@
                   <i class="fi fi-rr-angle-small-right"></i>
                 </a>
 
-                <a href="#" class="survey-tile">
+                <a
+                  href="https://stageensd.esigma.mospi.gov.in/PSD"
+                  class="survey-tile"
+                >
                   <span class="icon bg-purple">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -291,12 +345,15 @@
                       </defs>
                     </svg>
                   </span>
-                  <span class="label">CAPEX</span>
+                  <span class="label">PSD</span>
                   <i class="fi fi-rr-angle-small-right"></i>
                 </a>
 
-                <a href="#" class="survey-tile full">
-                  <span class="icon bg-info">
+                <a
+                  href="https://stageensd.esigma.mospi.gov.in/COOPERATIVE/admin"
+                  class="survey-tile full"
+                >
+                  <span class="icon bg-danger">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -358,7 +415,24 @@
         </div>
       </div>
     </div>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script>
+      function showLoader() {
+        $("#loaderWrapper").removeClass("d-none");
+      }
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      function hideLoader() {
+        $("#loaderWrapper").addClass("d-none");
+      }
+
+      // Show immediately
+      showLoader();
+
+      // Hide when everything (images, assets) is fully loaded
+      $(window).on("load", function () {
+        hideLoader();
+      });
+    </script>
   </body>
 </html>

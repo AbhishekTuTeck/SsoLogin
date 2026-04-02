@@ -1,6 +1,6 @@
 /* ===== Fonts ===== */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('../fonts/googleFontInter.css');
 
 @import url('https://cdn-uicons.flaticon.com/3.0.0/uicons-regular-rounded/css/uicons-regular-rounded.css');
 /* ===== Variables ===== */
@@ -23,7 +23,36 @@ a {
         background-color: darken(@primary, 10%);
     }
 }
-
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #FFF;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after {
+  content: '';  
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border-bottom: 4px solid #FF3D00;
+  border-left: 4px solid transparent;
+}
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
 /* ===== Base ===== */
 .ssoLoginpage {
      font-family: "Inter", sans-serif;
@@ -68,7 +97,7 @@ a {
 /* Menu links */
 .sso-menu .nav-link {
     position: relative;
-    color: #222;
+    color: #222 !important;
     font-weight: 500;
     font-size: 15px;
     font-weight: 500;
